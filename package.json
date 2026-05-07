@@ -1,0 +1,19 @@
+{
+  "name": "gpt-vis-md-plugins",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm -r --parallel dev",
+    "build": "pnpm -r --filter './packages/*' build",
+    "typecheck": "pnpm -r --parallel typecheck"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0"
+  },
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=8"
+  },
+  "packageManager": "pnpm@9.15.0"
+}
