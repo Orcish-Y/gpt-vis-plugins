@@ -22,10 +22,7 @@ export function gptVisMarkdownItPlugin(
   md: MarkdownIt,
   options: MarkdownItGPTVisOptions = {},
 ): void {
-  const {
-    tagName = 'gpt-vis',
-    keepOriginal = false,
-  } = options;
+  const { tagName = 'gpt-vis', keepOriginal = false } = options;
 
   const defaultFence = md.renderer.rules.fence!;
 

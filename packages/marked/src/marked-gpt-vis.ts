@@ -27,10 +27,7 @@ export function isVisSyntax(text: string): boolean {
 }
 
 export function markedGPTVis(options: MarkedGPTVisOptions = {}): MarkedExtension {
-  const {
-    tagName = 'gpt-vis',
-    keepOriginal = false,
-  } = options;
+  const { tagName = 'gpt-vis', keepOriginal = false } = options;
 
   return {
     renderer: {

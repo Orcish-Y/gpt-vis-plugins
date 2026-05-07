@@ -69,51 +69,51 @@ pnpm add gpt-vis-marked @antv/gpt-vis marked
 ### Unified / rehype
 
 ```ts
-import { rehypeGPTVis, registerGPTVisElement } from 'gpt-vis-rehype'
-import { unified } from 'unified'
-import remarkParse from 'remark-parse'
-import remarkRehype from 'remark-rehype'
-import rehypeStringify from 'rehype-stringify'
+import { rehypeGPTVis, registerGPTVisElement } from 'gpt-vis-rehype';
+import { unified } from 'unified';
+import remarkParse from 'remark-parse';
+import remarkRehype from 'remark-rehype';
+import rehypeStringify from 'rehype-stringify';
 
 // Register the Web Component (call once)
-registerGPTVisElement()
+registerGPTVisElement();
 
 const html = await unified()
-  .use(remarkParse)           // Markdown → mdast
-  .use(remarkRehype)           // mdast → hast
-  .use(rehypeGPTVis)           // Transform GPT-Vis code blocks into <gpt-vis> elements
-  .use(rehypeStringify)        // hast → HTML
-  .process('# Hello\n\n\`\`\`GPT-Vis\nvis line\ndata ...\n\`\`\`')
+  .use(remarkParse) // Markdown → mdast
+  .use(remarkRehype) // mdast → hast
+  .use(rehypeGPTVis) // Transform GPT-Vis code blocks into <gpt-vis> elements
+  .use(rehypeStringify) // hast → HTML
+  .process('# Hello\n\n\`\`\`GPT-Vis\nvis line\ndata ...\n\`\`\`');
 
-console.log(String(html))
+console.log(String(html));
 ```
 
 ### markdown-it
 
 ```ts
-import MarkdownIt from 'markdown-it'
-import { gptVisMarkdownItPlugin, registerGPTVisElement } from 'gpt-vis-markdown-it'
+import MarkdownIt from 'markdown-it';
+import { gptVisMarkdownItPlugin, registerGPTVisElement } from 'gpt-vis-markdown-it';
 
-registerGPTVisElement()
+registerGPTVisElement();
 
-const md = new MarkdownIt()
-md.use(gptVisMarkdownItPlugin)
+const md = new MarkdownIt();
+md.use(gptVisMarkdownItPlugin);
 
-const html = md.render('# Hello\n\n\`\`\`GPT-Vis\nvis line\ndata ...\n\`\`\`')
+const html = md.render('# Hello\n\n\`\`\`GPT-Vis\nvis line\ndata ...\n\`\`\`');
 ```
 
 ### Marked
 
 ```ts
-import { Marked } from 'marked'
-import { markedGPTVis, registerGPTVisElement } from 'gpt-vis-marked'
+import { Marked } from 'marked';
+import { markedGPTVis, registerGPTVisElement } from 'gpt-vis-marked';
 
-registerGPTVisElement()
+registerGPTVisElement();
 
-const marked = new Marked()
-marked.use(markedGPTVis())
+const marked = new Marked();
+marked.use(markedGPTVis());
 
-const html = await marked.parse('# Hello\n\n\`\`\`GPT-Vis\nvis line\ndata ...\n\`\`\`')
+const html = await marked.parse('# Hello\n\n\`\`\`GPT-Vis\nvis line\ndata ...\n\`\`\`');
 ```
 
 ## Options
@@ -138,7 +138,7 @@ md.use(gptVisMarkdownItPlugin, {
   theme: 'dark',
   width: 800,
   height: 400,
-})
+});
 ```
 
 Rendered HTML elements also support overriding defaults via `data-*` attributes:
