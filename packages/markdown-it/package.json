@@ -11,10 +11,10 @@
     "markdown",
     "LLM"
   ],
-  "homepage": "https://gpt-vis.antv.vision",
+  "homepage": "https://orcish-y.github.io/gpt-vis-plugins",
   "repository": {
     "type": "git",
-    "url": "https://github.com/antvis/gpt-vis-plugins",
+    "url": "https://github.com/Orcish-Y/gpt-vis-plugins",
     "directory": "packages/markdown-it"
   },
   "license": "MIT",
