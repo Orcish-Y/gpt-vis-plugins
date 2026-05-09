@@ -20,7 +20,7 @@
     "directory": "packages/rehype"
   },
   "license": "MIT",
-  "author": "antvis",
+  "author": "gpt-vis-plugin",
   "sideEffects": false,
   "type": "module",
   "main": "./dist/index.js",

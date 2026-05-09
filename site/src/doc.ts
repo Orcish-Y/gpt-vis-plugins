@@ -109,10 +109,7 @@ document.getElementById('preview').innerHTML = html;`)}
 ${pre(`md.use(gptVisMarkdownItPlugin, {
   tagName: 'gpt-vis',         // custom element tag name
   keepOriginal: false,        // append original <pre> as fallback
-  wrapper: {                  // add class/style to the output element
-    className: 'my-chart',
-    style: 'margin: 20px 0',
-  },
+  wrapper: true,              // enable wrapper container
 });`)}
 
 <h2 id="ecosystem-marked">marked</h2>
@@ -135,10 +132,7 @@ document.getElementById('preview').innerHTML = html;`)}
 ${pre(`marked.use(markedGPTVis({
   tagName: 'gpt-vis',         // custom element tag name
   keepOriginal: false,        // keep the original code block as fallback
-  wrapper: {                  // add class/style to the output element
-    className: 'my-chart',
-    style: 'margin: 20px 0',
-  },
+  wrapper: true,              // enable wrapper container
 }));`)}
 
 <h2>API Reference</h2>
@@ -193,6 +187,7 @@ ${pre(`marked.use(markedGPTVis({
   <tr><th>Property</th><th>Type</th><th>Default</th><th>Description</th></tr>
   <tr><td>tagName</td><td><code>string</code></td><td><code>'gpt-vis'</code></td><td>Custom element tag name ${tag('optional', false)}</td></tr>
   <tr><td>keepOriginal</td><td><code>boolean</code></td><td><code>false</code></td><td>Preserve original <code>&lt;pre&gt;</code> as fallback for non-vis syntax ${tag('optional', false)}</td></tr>
+  <tr><td>wrapper</td><td><code>boolean</code></td><td><code>false</code></td><td>Enable wrapper container around the output element ${tag('optional', false)}</td></tr>
 </table>
 
 <h3 id="api-markdown-it">gptVisMarkdownItPlugin(md, options?)</h3>
@@ -206,7 +201,7 @@ ${pre(`marked.use(markedGPTVis({
   <tr><th>Property</th><th>Type</th><th>Default</th><th>Description</th></tr>
   <tr><td>tagName</td><td><code>string</code></td><td><code>'gpt-vis'</code></td><td>Custom element tag name ${tag('optional', false)}</td></tr>
   <tr><td>keepOriginal</td><td><code>boolean</code></td><td><code>false</code></td><td>Append original code block HTML as fallback ${tag('optional', false)}</td></tr>
-  <tr><td>wrapper</td><td><code>GPTVisWrapper</code></td><td>—</td><td>Optional <code>className</code> and <code>style</code> applied to the output element ${tag('optional', false)}</td></tr>
+  <tr><td>wrapper</td><td><code>boolean</code></td><td><code>false</code></td><td>Enable wrapper container around the output element ${tag('optional', false)}</td></tr>
 </table>
 
 <h3 id="api-marked">markedGPTVis(options?)</h3>
@@ -220,7 +215,7 @@ ${pre(`marked.use(markedGPTVis({
   <tr><th>Property</th><th>Type</th><th>Default</th><th>Description</th></tr>
   <tr><td>tagName</td><td><code>string</code></td><td><code>'gpt-vis'</code></td><td>Custom element tag name ${tag('optional', false)}</td></tr>
   <tr><td>keepOriginal</td><td><code>boolean</code></td><td><code>false</code></td><td>Keep the original code block as fallback ${tag('optional', false)}</td></tr>
-  <tr><td>wrapper</td><td><code>GPTVisWrapper</code></td><td>—</td><td>Optional <code>className</code> and <code>style</code> applied to the output element ${tag('optional', false)}</td></tr>
+  <tr><td>wrapper</td><td><code>boolean</code></td><td><code>false</code></td><td>Enable wrapper container around the output element ${tag('optional', false)}</td></tr>
 </table>
   `;
 }
